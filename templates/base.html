@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="caminho/para/normalize.css">
+    <link rel="stylesheet" href="/static/styles.css"> </linkrel>
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+    <div class="aligned">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="250" alt="Minha imagem de capa">  
+        </div>
+        <div class="links">
+            <a href="{{ url_for('index') }}" target="_self"> Home </a> |
+            <a href="{{ url_for('quemsomos') }}" target="_self">Quem somos</a> |
+            <a href="{{ url_for('contato') }}" target="_self"> Contato </a> 
+        </div>   
+    </div>
+    {% block content %}
+    {% endblock %}
+    <h3>
+        Todos os direitos reservados
+    </h3>
+</body>
+</html>
